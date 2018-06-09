@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Site Description
+title: Purpose
 ---
 
 ![Comb Ridge](/images/LostCityReduced.jpg)
