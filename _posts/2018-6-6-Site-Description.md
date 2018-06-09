@@ -3,7 +3,7 @@ layout: post
 title: Site Description
 ---
 
-![Comb Ridge](/images/LostCity reduced.jpg)
+![Comb Ridge](/images/LostCityReduced.jpg)
 
 This site is dedicated to sharing information, tutorials, or whatever comes to mind as something useful for fellow archaeologists. 
 
