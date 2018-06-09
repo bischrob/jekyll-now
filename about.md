@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+### Me
+I am an archaeologist focused on the Southwest and Great Basin in the United States. I am currently finishing my master's degree at Brigham Young University and will soon be attending Arizona State University for my doctorate.
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+### Interests
+Survey and excavation are always fun, but when I'm in the lab I most enjoy working with 3D models, GIS analysis, and quantitative methods. I do most of my GIS and statistics in [R](https://www.r-project.org/) and love learning new programs.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[bischrob@gmail.com](mailto:bischrob@gmail.com)
