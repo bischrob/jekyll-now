@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-[profile picture](https://avatars1.githubusercontent.com/u/21052185?s=400&u=ef179cb4735d8f0c41a3cf14bffb8a1ee4c3b190&v=4)
+![profile picture](https://avatars1.githubusercontent.com/u/21052185?s=400&u=ef179cb4735d8f0c41a3cf14bffb8a1ee4c3b190&v=4)
 
 ### Me
 I am an archaeologist focused on the Southwest and Great Basin in the United States. I am currently finishing my master's degree at Brigham Young University and will soon be attending Arizona State University for my doctorate.
