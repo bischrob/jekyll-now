@@ -2,7 +2,7 @@
 layout: post
 title: Pilling Figurines 3D Models
 ---
-# Pilling Figurines 3D Models
+
 I was recently able to photograph the Pilling Figurines and process the images into 3D models using Agisoft Photoscan.
 
 The 12 Pilling Figurines are on display in the Utah State University Eastern [Prehistoric Museum](usueastern.edu/museum) in Price, Utah. Thanks goes to Tim Riley and the museum for allowing access. These figurines and the rest of the museum is well worth the visit if you're going through Price.
