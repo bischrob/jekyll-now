@@ -19,7 +19,9 @@ The 12 Pilling Figurines are on display in the Utah State University Eastern [Pr
 
 ### Figurine 1
 
-<div class="sketchfab-embed-wrapper"><iframe  width="640"height="480"src="https://sketchfab.com/models/45e036d22eb0430c840751b5ae8deeb7/embed"frameborder="0" allow="autoplay; fullscreen; vr"mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <ahref="https://sketchfab.com/models/45e036d22eb0430c840751b5ae8deeb7?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Pilling Figurine No. 1</a> by <ahref="https://sketchfab.com/rbischoff?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Robert Bischoff</a> on <ahref="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a> </p> </div>
+<div class="sketchfab-embed-wrapper"> 
+<iframe  width="640" height="480" src="https://sketchfab.com/models/45e036d22eb0430c840751b5ae8deeb7/embed" frameborder="0" allow="autoplay; fullscreen; vr"mozallowfullscreen="true" webkitallowfullscreen="true"> </iframe> 
+<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <ahref="https://sketchfab.com/models/45e036d22eb0430c840751b5ae8deeb7?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Pilling Figurine No. 1</a> by <ahref="https://sketchfab.com/rbischoff?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Robert Bischoff</a> on <ahref="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a> </p> </div>
 
 
 ### Figurine 2
