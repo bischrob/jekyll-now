@@ -2,6 +2,7 @@
 layout: post
 title: Pilling Figurines 3D Models
 ---
+# Pilling Figurines 3D Models
 I was recently able to photograph the Pilling Figurines and process the images into 3D models using Agisoft Photoscan.
 
 The 12 Pilling Figurines are on display in the Utah State University Eastern [Prehistoric Museum](usueastern.edu/museum) in Price, Utah. Thanks goes to Tim Riley and the museum for allowing access. These figurines and the rest of the museum is well worth the visit if you're going through Price.
@@ -43,7 +44,7 @@ The 12 Pilling Figurines are on display in the Utah State University Eastern [Pr
 
 ### Figurine 7
 
-div class="sketchfab-embed-wrapper"><iframe  width="640"height="480"src="https://sketchfab.com/models/b75225c9fa324fd7af1fecf475e79655/embed"frameborder="0" allow="autoplay; fullscreen; vr"mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <ahref="https://sketchfab.com/models/b75225c9fa324fd7af1fecf475e79655?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Pilling Figurine No. 7</a> by <ahref="https://sketchfab.com/rbischoff?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Robert Bischoff</a> on <ahref="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a> </p> </div>
+<div class="sketchfab-embed-wrapper"><iframe  width="640"height="480"src="https://sketchfab.com/models/b75225c9fa324fd7af1fecf475e79655/embed"frameborder="0" allow="autoplay; fullscreen; vr"mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <ahref="https://sketchfab.com/models/b75225c9fa324fd7af1fecf475e79655?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Pilling Figurine No. 7</a> by <ahref="https://sketchfab.com/rbischoff?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Robert Bischoff</a> on <ahref="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a> </p> </div>
 
 ### Figurine 8
 
