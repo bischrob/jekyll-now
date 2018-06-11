@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 ### Me
-![profile pic](/images/ProfilePic.jpg =250x)
+![profile pic](/images/ProfilePic.jpg)
 
 I am an archaeologist focused on the Southwest and Great Basin in the United States. I am currently finishing my master's degree at Brigham Young University and will soon be attending Arizona State University for my doctorate.
 
