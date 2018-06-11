@@ -12,7 +12,8 @@ I've chosen Blender as it is free and comes with no restrictions. The software c
 design a 3D game, but it can be  overwhelming at first. Blender has a large community and many free tutorials if you would like to become more familiar with the basics or expand your knowledge. This tutorial is designed for the Blender beginner, but I generally will only cover Blender basics related to this process.
   
 
-## Step 1 - Remove cube ![Delete cube](https://lh3.googleusercontent.com/8-sbTftJ4Jf4fYWwDEa6WonrE4dD3RYTjkeK_W1h477928JXhoOtXhH4sLx1firBm18DynMucu4kOg "Delete cube")
+## Step 1 - Remove cube
+![Delete cube](https://lh3.googleusercontent.com/8-sbTftJ4Jf4fYWwDEa6WonrE4dD3RYTjkeK_W1h477928JXhoOtXhH4sLx1firBm18DynMucu4kOg "Delete cube")
 
 If you have the default setup for Blender, then the first step is to remove the default cube. This is done by first selecting the object.
 Right click on the cube and it will be outlined in orange. Then, with the mouse inside the *3D View* window (keyboard shortcuts only work if the mouse is hovering in the right area), press *X* or the delete key. A menu will appear, click delete.
