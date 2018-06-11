@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Purpose
+title: Size 3D Models in Blender
 ---
 
 This tutorial demonstrates step by step how to accurately size a 3D model using the open source software [Blender](https://www.blender.org/). You will need a 3D model in a common file format (I use OBJs) and the measurement of the longest axis of the object. Once you become familiar with this process it will only take a couple minutes to complete.
