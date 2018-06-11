@@ -59,4 +59,4 @@ The **final** step is to apply these changes. Press *Ctrl_A* and apply the *Scal
 
 Next you may want to measure something. Here's a link to get you started --- [Ruler & Protractor](https://docs.blender.org/manual/en/dev/interface/ruler_protractor.html).
 
-Thanks for reading the tutorial and feel free to comment below or email me if you have any questions or if you have any suggestions on improving this process.
+Thanks for reading the tutorial and feel free to comment below or [email me](bischrob@gmail.com) if you have any questions or if you have any suggestions on improving this process.
