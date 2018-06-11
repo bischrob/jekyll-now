@@ -1,4 +1,9 @@
-﻿This tutorial demonstrates step by step how to accurately size a 3D model using the open source software [Blender](https://www.blender.org/). You will need a 3D model in a common file format (I use OBJs) and the measurement of the longest axis of the object. Once you become familiar with this process it will only take a couple minutes to complete.
+---
+layout: post
+title: Purpose
+---
+
+This tutorial demonstrates step by step how to accurately size a 3D model using the open source software [Blender](https://www.blender.org/). You will need a 3D model in a common file format (I use OBJs) and the measurement of the longest axis of the object. Once you become familiar with this process it will only take a couple minutes to complete.
 
 3D models are great for measurements that are difficult to obtain from physical objects, but first the 3D model itself must be the right
 size. Many laser scanners or structured-light scanners automatically scale the object, but often models created using photogrammetry lack a true scale. Whatever the reason you need a 3D object scaled to the right size, this tutorial will show you a simple method using Blender.  
