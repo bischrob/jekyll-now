@@ -6,10 +6,7 @@ layout: default
   {% for post in site.posts %}
     <article class="post">
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        <div><img src="/images/LostCityReduced.jpg" alt="Comb Ridge"></div>
+          <div><img src="/images/LostCityReduced.jpg" alt="Comb Ridge"></div>
           <p>This site is dedicated to sharing information, tutorials, or whatever comes to mind as something useful for fellow archaeologists.</p>
           <br> 
           <p>Most future posts will be focused on 3D modelling, [R](https://www.r-project.org/), and GIS.</p>
@@ -17,7 +14,10 @@ layout: default
           <p>
           Feedback is always welcome. Leave a comment on a blog or email me at <a href="bischrob@gmail.com"</a>.
           </p>
+      
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
+      <div class="entry">
         {{ post.excerpt }}
       </div>
 
