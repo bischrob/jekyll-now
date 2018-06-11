@@ -1,7 +1,10 @@
----
+﻿---
 layout: post
-title: Size 3D Models in Blender
+title: Purpose
 ---
+
+
+![Blender Logo](https://lh3.googleusercontent.com/fRkYJFXDmaZ3mfr0unmGmTibLwQrqnfeOSHZXaww14wS2VItffH3QDY0FEaFy7xYHdv4_zeVTysxIg)
 
 This tutorial demonstrates step by step how to accurately size a 3D model using the open source software [Blender](https://www.blender.org/). You will need a 3D model in a common file format (I use OBJs) and the measurement of the longest axis of the object. Once you become familiar with this process it will only take a couple minutes to complete.
 
@@ -12,7 +15,7 @@ I've chosen Blender as it is free and comes with no restrictions. The software c
 design a 3D game, but it can be  overwhelming at first. Blender has a large community and many free tutorials if you would like to become more familiar with the basics or expand your knowledge. This tutorial is designed for the Blender beginner, but I generally will only cover Blender basics related to this process.
   
 
-## Step 1 - Remove cube
+## Step 1 - Remove cube 
 ![Delete cube](https://lh3.googleusercontent.com/8-sbTftJ4Jf4fYWwDEa6WonrE4dD3RYTjkeK_W1h477928JXhoOtXhH4sLx1firBm18DynMucu4kOg "Delete cube")
 
 If you have the default setup for Blender, then the first step is to remove the default cube. This is done by first selecting the object.
@@ -59,4 +62,4 @@ The **final** step is to apply these changes. Press *Ctrl_A* and apply the *Scal
 
 Next you may want to measure something. Here's a link to get you started --- [Ruler & Protractor](https://docs.blender.org/manual/en/dev/interface/ruler_protractor.html).
 
-Thanks for reading the tutorial and feel free to comment below or [email me](bischrob@gmail.com) if you have any questions or if you have any suggestions on improving this process.
+Thanks for reading the tutorial and feel free to comment below or [email me](bischrob@gmail.com) if you have any questions, or if you have any suggestions on improving this process.
