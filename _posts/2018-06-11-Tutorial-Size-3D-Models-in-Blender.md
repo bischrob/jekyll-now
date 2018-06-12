@@ -1,6 +1,8 @@
 ﻿---
 layout: post
 title: Tutorial&#58; Size 3D Models in Blender
+redirect_from:
+  - /Size-3D-Models-in-Blender/
 ---
 
 This tutorial demonstrates how to accurately size a 3D model using the open source software [Blender](https://www.blender.org/).
