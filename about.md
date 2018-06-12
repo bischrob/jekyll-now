@@ -3,6 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
+
 <img align="right" src="/images/ProfilePic.jpg">
 
 ### Me
