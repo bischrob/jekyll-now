@@ -8,7 +8,7 @@ permalink: /about/
 
 ### Me
 
-I am an archaeologist focused on the Southwest and Great Basin in the United States. I am currently finishing my master's degree at Brigham Young University and will soon be attending Arizona State University for my doctorate.
+I am an archaeologist focused on the Southwest and Great Basin in the United States. I received my master's degree from Brigham Young University and am currently attending Arizona State University for my doctorate.
 
 ### Interests
 Survey and excavation are always fun, but when I'm not in the field I most enjoy working with 3D models, GIS analysis, and quantitative methods.
