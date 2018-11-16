@@ -15,6 +15,9 @@ Survey and excavation are always fun, but when I'm not in the field I most enjoy
 
 View my 3D models on [Sketchfab](https://sketchfab.com/rbischoff)
 
+### CV
+https://bischrob.github.io/data/CV.pdf
+
 ### Contact me
 
 [bischrob@gmail.com](mailto:bischrob@gmail.com)
