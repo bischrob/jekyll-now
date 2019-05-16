@@ -5,7 +5,7 @@ redirect_from:
   - /Size-3D-Models-in-Blender/
 ---
 
-# Automatic Background Removal for Photogrammetry
+
 There are a few different ways to automatically mask backgrounds when making a 3D model using photogrammetry, but I've struggled to find a method that worked for what I was doing. [Photoshop](https://theblog.adobe.com/photoshop-releases-version-19-1-selections-improvements-advanced-support-windows-high-density-monitors/?red=a) released a new AI feature to automatically select the subject of an image. This post explores how this tool can be used to mask unwanted background features when creating 3D models using photogrammetry. This is not a photogrammetry tutorial, and I assume a basic familarity with  Metashape (formerly Photoscan), the software I use for photogrammetry.
 My standard process when creating a 360&deg; 3D model of an object is to create a black and white mask of each image by using Photoshop's *Quick Selection Tool*, or other selection tools when necessary, to select the object, make it white, and then make everything else black. I use Metashape's create mask from file option to automatically apply each mask to its corresponding image. This is usually the part of my workflow that requires the most work from me. Running the model can take longer, but I don't need to do much. Photoshop action scripts speed up the process of making a mask, as I can record the actions to make the image black and white once I've selected the object. 
 I've used a similar process to automatically create masks using the new *select subject* option. Spoiler, the results aren't as good as doing it by hand, but we're not quite living in the AI world of my dreams yet.
