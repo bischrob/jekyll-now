@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<img align="right" src="/images/Headshot_8.15.19_lowres.jpg = 250x">
+<img align="right" src="/images/ProfilePicv2.jpg" width = "250" height = "280" alt = "Robert Bischoff">
 
 ### Me
 
