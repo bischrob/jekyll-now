@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<img align="right" src="/images/ProfilePic.jpg">
+<img align="right" src="/images/Headshot_8.15.19_lowres.jpg = 250x">
 
 ### Me
 
