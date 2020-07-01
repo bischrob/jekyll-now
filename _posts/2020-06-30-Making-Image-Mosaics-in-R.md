@@ -14,7 +14,7 @@ The first step was to gather the photos. The more photos the better. My wife and
 
 I also use `tidyverse` which is standard for me and `magrittr`, as I like some of the pipes not included in `tidyverse`. The `tictoc` package is a great little package for keeping track of elapsed time. Base R can take care of a lot of the functions in these packages, but I find them more convenient and easier to follow. The magick package sometimes has a problem with memory management when communicating with imagemagick, but the development version of the package has an `image_destroy` function that helps.
 
-```
+```r
 # libraries used
 remotes::install_github('ropensci/magick')
 library(RsimMosaic)
@@ -26,7 +26,7 @@ library(tictoc)
 
 As my photos were zipped, I used R to unzip them (why not use R for everything, right?). I use the `walk` function from `purrr` as it doesn't return any results. I have the photos stored in a subdirectory called *Photos*.
 
-```
+`
 # photos are zipped; list files and unzip them
 lfZip <- list.files("Photos", full.names = T, pattern = 'zip')
 
@@ -35,11 +35,11 @@ walk(lfZip, unzip, exdir = 'Photos')
 
 # list all photos
 lf <- list.files("Photos", pattern = 'jpg', full.names = T)
-```
+`
 
 The biggest problem with the image mosaic is that all of the images have to be square. I don't know about you, but I don't take many square photos. `RsimMosaic` does have a `createTiles` function, but as the help file notes, the interpolation scheme does not produce high quality images. I wrote my own function to generate square tiles and again I used `walk` to save the results. The function crops photos in the middle, depending on whether it is a landscape or portrait orientation.
 
-```
+```r
 # create new directory to save results
 dir.create('Tiles')
 
@@ -78,13 +78,11 @@ createTiles            |  magick
 :-------------------------:|:-------------------------:
 <img src="../images/createTiles.jpg" height="180">  |  <img src="../images/magick.jpg" height="180"> 
 
-<img src="../images/createTiles.jpg" height="24">
-
 Once the tiles were ready, finally. I picked one of the photos, a picture of [Pueblo Bonito](https://en.wikipedia.org/wiki/Pueblo_Bonito), and converted it to a smaller size. Each pixel in the input image will be replaced by a 60-pixel tile, which means the resulting image is huge unless you use a very small pixel value. I'm going for big, but not too big.
 
 ![Pueblo Bonito](../images/PuebloBonitoOriginal.jpg)
 
-```
+```r
 image_read('Photos/20171006_135349.jpg') %>% image_scale('250') %>%
   image_write('PuebloBonito.jpg')
 
