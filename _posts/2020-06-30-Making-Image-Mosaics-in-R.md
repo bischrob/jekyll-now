@@ -76,7 +76,9 @@ Here's a comparison of two 60-pixel images, the first is from the `createTiles` 
 
 createTiles            |  magick
 :-------------------------:|:-------------------------:
-![createTiles](../images/createTiles.jpg =180x180)  |  ![customMagick](../images/magick.jpg =180x180)
+<img src="../images/createTiles.jpg" height="180">  |  <img src="../images/magick.jpg" height="180"> 
+
+<img src="../images/createTiles.jpg" height="24">
 
 Once the tiles were ready, finally. I picked one of the photos, a picture of [Pueblo Bonito](https://en.wikipedia.org/wiki/Pueblo_Bonito), and converted it to a smaller size. Each pixel in the input image will be replaced by a 60-pixel tile, which means the resulting image is huge unless you use a very small pixel value. I'm going for big, but not too big.
 
