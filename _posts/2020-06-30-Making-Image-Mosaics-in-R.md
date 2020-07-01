@@ -26,7 +26,7 @@ library(tictoc)
 
 As my photos were zipped, I used R to unzip them (why not use R for everything, right?). I use the `walk` function from `purrr` as it doesn't return any results. I have the photos stored in a subdirectory called *Photos*.
 
-`
+```r
 # photos are zipped; list files and unzip them
 lfZip <- list.files("Photos", full.names = T, pattern = 'zip')
 
@@ -35,7 +35,7 @@ walk(lfZip, unzip, exdir = 'Photos')
 
 # list all photos
 lf <- list.files("Photos", pattern = 'jpg', full.names = T)
-`
+```r
 
 The biggest problem with the image mosaic is that all of the images have to be square. I don't know about you, but I don't take many square photos. `RsimMosaic` does have a `createTiles` function, but as the help file notes, the interpolation scheme does not produce high quality images. I wrote my own function to generate square tiles and again I used `walk` to save the results. The function crops photos in the middle, depending on whether it is a landscape or portrait orientation.
 
