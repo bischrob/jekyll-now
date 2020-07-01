@@ -6,7 +6,7 @@ excerpt_separator: <!--more-->
 
 I had the idea to make my dad an image mosaic of his grandkids for Father's day. My immediate thought was to check if R had a package for that--and it does. The `RsimMosaic` package is a great tool for making image mosaics. Combined with the `magick` package, I have all the tools I need. While I think the picture of my dad turned out great, I decided to make an archaeology related mosaic for this post.
 
-![Mosaic Small](images/PuebloBonitoMosaicSmall.jpg)
+![Mosaic Small](../images/PuebloBonitoMosaicSmall.jpg)
 <!--more-->
 
 The first step was to gather the photos. The more photos the better. My wife and I use Google Photos to store all of our pictures, so I searched the term *archaeology* within my photo account and used Google's AI to make my life easier. I downloaded more than 1,000 photographs that matched this term. Not every picture was archaeology related, but it did a fairly good job. I only removed a few pictures that didn't fit.
