@@ -7,6 +7,7 @@ excerpt_separator: <!--more-->
 I had the idea to make my dad an image mosaic of his grandkids for Father's day. My immediate thought was to check if R had a package for that--and it does. The `RsimMosaic` package is a great tool for making image mosaics. Combined with the `magick` package, I have all the tools I need. While I think the picture of my dad turned out great, I decided to make an archaeology related mosaic for this post.
 
 ![Mosaic Small](../images/PuebloBonitoMosaicSmall.jpg)
+
 <!--more-->
 
 The first step was to gather the photos. The more photos the better. My wife and I use Google Photos to store all of our pictures, so I searched the term *archaeology* within my photo account and used Google's AI to make my life easier. I downloaded more than 1,000 photographs that matched this term. Not every picture was archaeology related, but it did a fairly good job. I only removed a few pictures that didn't fit.
@@ -75,7 +76,7 @@ Here's a comparison of two 60-pixel images, the first is from the `createTiles` 
 
 createTiles            |  magick
 :-------------------------:|:-------------------------:
-![createTiles](../images/createTiles.jpg)  |  ![customMagick](../images/magick.jpg)
+![createTiles](../images/createTiles.jpg =180x180)  |  ![customMagick](../images/magick.jpg =180x180)
 
 Once the tiles were ready, finally. I picked one of the photos, a picture of [Pueblo Bonito](https://en.wikipedia.org/wiki/Pueblo_Bonito), and converted it to a smaller size. Each pixel in the input image will be replaced by a 60-pixel tile, which means the resulting image is huge unless you use a very small pixel value. I'm going for big, but not too big.
 
@@ -96,6 +97,8 @@ toc()
 Note in case you run across this: When I ran this function the first time it failed. I did some investigation and determined that a handful of photos were saved with an 8 bit depth and the other were 24 bit depth. As there were only a few, I just removed them and proceeded.
 
 The result is cool if you zoom in, but doesn't look all that great. A good way to improve the look is to overlay the original photo with a 50% opacity. I also wanted to increase the contrast. I do love Photoshop and it can easily be done that route, but I think I said something about doing it all in R, so here we go.
+
+(Warning: the following images may take a long time to load)
 
 ![Pueblo Bonito Mosaic](../images/PuebloBonitoMosaic.jpg)
 
