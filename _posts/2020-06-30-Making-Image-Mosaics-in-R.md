@@ -75,11 +75,11 @@ Here's a comparison of two 60-pixel images, the first is from the `createTiles` 
 
 createTiles            |  magick
 :-------------------------:|:-------------------------:
-![createTiles](images/createTiles.jpg)  |  ![customMagick](images/magick.jpg)
+![createTiles](../images/createTiles.jpg)  |  ![customMagick](images/magick.jpg)
 
 Once the tiles were ready, finally. I picked one of the photos, a picture of [Pueblo Bonito](https://en.wikipedia.org/wiki/Pueblo_Bonito), and converted it to a smaller size. Each pixel in the input image will be replaced by a 60-pixel tile, which means the resulting image is huge unless you use a very small pixel value. I'm going for big, but not too big.
 
-![Pueblo Bonito](images/PuebloBonitoOriginal.jpg)
+![Pueblo Bonito](../images/PuebloBonitoOriginal.jpg)
 
 ```
 image_read('Photos/20171006_135349.jpg') %>% image_scale('250') %>%
@@ -97,7 +97,7 @@ Note in case you run across this: When I ran this function the first time it fai
 
 The result is cool if you zoom in, but doesn't look all that great. A good way to improve the look is to overlay the original photo with a 50% opacity. I also wanted to increase the contrast. I do love Photoshop and it can easily be done that route, but I think I said something about doing it all in R, so here we go.
 
-![Pueblo Bonito Mosaic](images/PuebloBonitoMosaic.jpg)
+![Pueblo Bonito Mosaic](../images/PuebloBonitoMosaic.jpg)
 
 Increasing contrast is not difficult, but the opacity problem is more challenging. There is no native way in the `magick` package to change the background opacity, and because it is a jpg image, the color scheme is *rgb* when it needs to be *rgba*. The hack I used is to make all white pixels transparent on the original photo, which doesn't really change the picture but does change it to *rgba*. I then modified the bitmap directly by multiplying it by 0.5. Then the images can be combined and saved to produce the final result.
 
@@ -115,6 +115,6 @@ original <- c(mosaic, original) %>% image_flatten()
 image_write(original, 'PuebloBonitoMosaicMod.jpg', quality = 80)
 ```
 
-![Pueblo Bonito Overlay](images/PuebloBonitoMosaicMod.jpg)
+![Pueblo Bonito Overlay](../images/PuebloBonitoMosaicMod.jpg)
 
 It's not perfect, but there are a lot of ways to tweak it to improve the result. Changing the opacity, and pixel sizes will make the biggest difference. Let me know if you have any ideas on how to improve this code, and I hope you have some fun making mosaics of your dogs, cats, or whatever you love.
