@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Random Book Picker</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js?ver=1.4.2'></script> -->
+  <style>
+  .output1 {
+      color: gray;
+    font-size: 100%;
+  }
+
+  .output2 {
+      color: black;
+    font-size: 80%;
+  }
+
+  body {
+    background-color: white;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="col-sm-8">
+      <div style="margin-bottom:5px"></div>
+      <button id="random" type="button" class="btn btn-default action-button">Pick my next read!</button>
+      <div style="margin-bottom:15px"></div>
+      <div id="resTitle" class="output1"></div>
+      <div id="by" class="output2"></div>
+      <div id="resAuthor" class="output1"></div>
+    </div>
+  </div>
+  <!-- <script src="node_modules\g-sheets-api" type="text/javascript"></script> -->
+<script src="bundle.js"></script>
+</body>
+
+</html>
