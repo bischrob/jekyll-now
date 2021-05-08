@@ -288,3 +288,21 @@ footer {
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "svg-icons";
+
+// Added by RJB
+
+.standardImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.inlineImage {
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+}
