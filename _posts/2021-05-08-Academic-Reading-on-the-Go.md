@@ -6,7 +6,6 @@ excerpt_separator: <!--more-->
 
 <img src = ../images/AcademicReading/pdf-collagev2.jpg width="100%" class='standardImage'>
 
-<div style='vertical-align:middle; display:inline;'>
 
 
 I love reading on my phone. Why? Because it is convenient. Books are great, but they usually require using both my hands, and that's a lot of work. Even worse, I have to carry the book around. It's been a long time since I walked around with a novel in my pocket in case I got bored. Reading on a computer is ok, but it's not my favorite. I usually read e-books or html content like news and blogs on my phone. Keeping up with the latest archaeology articles and books is a lot harder though. I often feel like I should be spending a lot more time keeping up with the ever-growing literature I need to keep track of. Academic books aren't very portable but most of my reading is done with pdfs. For a format that is literally a "portable document format," pdfs aren't that easy to read on a phone. Apparently I'm not alone in thinking this:
@@ -42,5 +41,3 @@ I am a huge fan of liquid mode and I've already used it to increase my reading p
 Let me know in the comments if you have any tips for reading productively.
 
 <sup>1</sup> Wiggers, Kyle 2020 Adobe's Liquid Mode Leverages AI to Reformat PDFs for Mobile Devices. *VentureBeat*. <https://venturebeat.com/2020/09/23/adobes-liquid-mode-leverages-ai-to-reformat-pdfs-for-mobile-devices/,> accessed May 8, 2021.
-
-</div>
