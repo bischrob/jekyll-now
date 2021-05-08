@@ -1,0 +1,18 @@
+.output1 {
+    color: gray;
+  font-size: 400%;
+}
+
+.output2 {
+    color: black;
+  font-size: 300%;
+}
+
+#random {
+    color: #505050;
+  font-size: 200%;
+}
+
+body {
+  background-color: #edf5ff;
+}
