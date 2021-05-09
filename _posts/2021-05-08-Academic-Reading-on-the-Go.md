@@ -38,12 +38,8 @@ Bookdown allows you to easily navigate the document, download a pdf or epub vers
 
 I am a huge fan of liquid mode and I've already used it to increase my reading productivity, but I also want to encourage authors to consider ease of access in their publishing. Reducing mobile phone usage is a worthy goal, but so is reading the latest preprints while waiting in line at the grocery store.
 
-Let me know in the comments if you have any tips for reading productively.
+Let me know in the comments or via [email](mailto:bischrob@gmail.com) if you have any tips for reading productively.
 
-<br>
-<br>
-<br>
-<br>
 <br>
 
 <hr>
