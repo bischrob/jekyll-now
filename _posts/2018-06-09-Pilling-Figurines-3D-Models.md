@@ -6,7 +6,7 @@ excerpt_separator: <!--more-->
 
 I was recently able to photograph the Pilling Figurines and process the images into 3D models using Agisoft Photoscan.
 
-<a href="../images/PillingFigurinesBischoff.jpg">
+<a href="/Pilling-Figurines-3D-Models">
 <img src="../images/PillingFigurinesBischoff.jpg" class="mainImg" width="100%"/>
 </a>
 
