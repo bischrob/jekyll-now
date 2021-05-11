@@ -1,4 +1,5 @@
-$content = Get-content -Path 'Rmds\publications.md';
-$newContent = $content -replace 'Bischoff', '**Bischoff**';
-$newContent | Set-Content -Path 'Rmds\publications.md';
-Move-Item -Path 'Rmds\publications.md' -Destination 'publications.md' -Force
+$content = Get-content -Path $Args[0];
+$newContent = $content -replace '\*', '';
+$newContent = $newContent -replace 'Bischoff,', '**Bischoff**,';
+$newContent | Set-Content -Path $Args[0];
+

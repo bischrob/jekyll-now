@@ -7,13 +7,22 @@ output:
     keep_md: yes
 ---
 
-```{r setup,echo = F, warning = F,message = F,results= "asis"}
-
+```{r setup,echo = F, warning = F,message = F,results='hide'}
 library(dplyr)
 library(tidyr)
 library(magrittr)
 library(RefManageR)
-bib1 <- RefManageR::ReadBib('publications.bib')
-print(bib1,.opts = list(style = "markdown",bib.style = "authoryear",first.inits = F))
+library(here)
+shell(paste(here::here("Rmds","highlightName.ps1"),
+            here::here("Rmds","publications.bib")),shell = "powershell")
+BibOptions(bib.style = "authoryear",first.inits = F,style = "markdown",sorting = "none")
+bib1 <- RefManageR::ReadBib(here::here('Rmds/publications.bib'))
+# note
+# run this code in powershell after generating markdown
+# Move-Item -Path 'Rmds\publications.md' -Destination 'publications.md' -Force
+```
+
+```{r print,echo = F,results='asis'}
+print(bib1)
 ```
 
