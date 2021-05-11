@@ -1,5 +1,5 @@
 ---
-title: "AutomaticBackgroundRemoval"
+title: "Automatic Background Removal"
 layout: post
 excerpt_separator: <!--more-->
 categories: 3D Models

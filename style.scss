@@ -308,3 +308,14 @@ footer {
   float: left;
   margin-right: 15px;
 }
+
+.boxBorder {
+  background-color: #ECF6FF;
+  border:2px solid #E4EEF6;
+  outline-color: #ECF6FF;  
+  outline-style:ridge;
+    padding-top: 20px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}

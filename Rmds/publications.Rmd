@@ -22,7 +22,9 @@ bib1 <- RefManageR::ReadBib(here::here('Rmds/publications.bib'))
 # Move-Item -Path 'Rmds\publications.md' -Destination 'publications.md' -Force
 ```
 
+<div class="boxBorder" markdown="1">
+
 ```{r print,echo = F,results='asis'}
 print(bib1)
 ```
-
+</div>

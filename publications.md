@@ -9,6 +9,8 @@ output:
 
 
 
+<div class="boxBorder" markdown="1">
+
 **Bischoff**, Robert J. and James R. Allison (2021a). "Rosegate
 Projectile Points in the Fremont Region". In: _SocArXiv (accepted with
 revisions to Utah Archaeology)_. URL:
@@ -29,4 +31,4 @@ URL:
 Juan Red Ware_. Master's thesis, Department of Anthropology, Brigham
 Young University, Provo, Utah. URL:
 [https://scholarsarchive.byu.edu/etd/7003/](https://scholarsarchive.byu.edu/etd/7003/).
-
+</div>
