@@ -7,9 +7,7 @@ output:
     keep_md: yes
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, cache = T)
-```
+
 
 Learning [***R***](https://www.r-project.org/) has been fun for a number of reasons for me. One is simply that I find programming fun. It's like solving puzzles for me. Sure there's a lot of frustration involved, but I find it worthwhile. R has been fun because I love numbers and it's designed for statistics. Another passion is efficiency. I don't like to do things by hand if I have to, and I love to automate things. Today I wanted to demonstrate some of the possibilities R has to offer. Instead of something archaeology related, I'll talk about another passion of mine--sports.
 
@@ -21,11 +19,59 @@ If you're not interested in the code, then skip to the end, and I'll tell you th
 
 First I love the tidyverse, which is a collection of packages that make R easier to use and understand. I also like some of the features of the magrittr package that aren't loaded with the tidyverse packages. Rvest is a package to scrape the web, and lubridate is a great package for working with dates.
 
-```{r}
+
+```r
 library(magrittr)
 library(tidyverse)
+```
+
+```
+## -- Attaching packages --------------------------------------- tidyverse 1.3.0 --
+```
+
+```
+## v ggplot2 3.3.3     v purrr   0.3.4
+## v tibble  3.1.0     v dplyr   1.0.5
+## v tidyr   1.1.3     v stringr 1.4.0
+## v readr   1.4.0     v forcats 0.5.1
+```
+
+```
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x tidyr::extract()   masks magrittr::extract()
+## x dplyr::filter()    masks stats::filter()
+## x dplyr::lag()       masks stats::lag()
+## x purrr::set_names() masks magrittr::set_names()
+```
+
+```r
 library(rvest)
+```
+
+```
+## 
+## Attaching package: 'rvest'
+```
+
+```
+## The following object is masked from 'package:readr':
+## 
+##     guess_encoding
+```
+
+```r
 library(lubridate)
+```
+
+```
+## 
+## Attaching package: 'lubridate'
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     date, intersect, setdiff, union
 ```
 
 I decided to use ESPN's BPI game odds. These are adjusted with lots of variables and are decently accurate.
@@ -40,7 +86,8 @@ The `%<>%` function is one of my favorites as it takes whatever is on the left, 
 
 I won't describe what ***xpaths*** are in detail, but they can be used to identify specific elements on a page. The table rows match up to the `xpath` so I can get all of the links to the individual games by just changing what is essentially the row number. This was easier to do before the game started, but afterwards the link disappeared, so I had to find a workaround that works more consistently. 
 
-```{r}
+
+```r
 url = "https://www.espn.com/nba/team/schedule/_/name/utah" %>% 
   read_html()
 
@@ -62,7 +109,8 @@ schedule %<>%
 
 Next, I identified the remaining games. There are a few ways to do this, but I decided to get complicated and convert the date in the schedule table to a real date so I could filter for games today and later. It might be better to just filter for games that are not completed, but this way shows how R can be used for time series.
 
-```{r}
+
+```r
 schedule %<>% 
   mutate_at(vars(DATE),list(~.x %>% 
                               str_remove_all("^.*?,") %>%
@@ -77,7 +125,8 @@ remaining = schedule %>%
 
 Next, I used a ***purrr map*** function to go through each game link and get the odds of winning for the home team. I then calculated the Jazz odds of winning by determining who was the home team and inverting the odds if necessary. Because I ran this during a game the game link was missing so I used the invalidate function from ***gtools*** to add in the odds for tonight. I haven't used this function much but it seems a good catchall for values that are problematic (e.g., null,NA, or empty values).
 
-```{r}
+
+```r
 remaining %<>% 
   mutate(HomePred = map_chr(gameID,~{
     if(gtools::invalid(.x)){
@@ -98,7 +147,8 @@ remaining %<>%
 
 Last, I created a function to simulate the remaining wins using 1 as a win and zero as a loss and replicated that function 10,000 times. The simulation went fairly quickly on my computer, and I used the nice and simple ***tictoc*** package to show the time elapsed.
 
-```{r}
+
+```r
 predictWins = function(probs = remaining$WinPer){
   map_int(probs,~{
     sample(1:0,1,replace = T,prob = c(.x,1-.x)) %>% sum
@@ -110,15 +160,27 @@ sims = replicate(10000,predictWins(remaining$WinPer))
 tictoc::toc()
 ```
 
+```
+## 1.14 sec elapsed
+```
+
 With these results I could look at the odds Utah wins its remaining games.
 
-```{r}
+
+```r
 prop.table(table(sims))
+```
+
+```
+## sims
+##      0      1      2      3      4 
+## 0.0085 0.0873 0.2913 0.4208 0.1921
 ```
 
 The Phoenix Suns are closing in on the Jazz. I could run the above code again but substituting the Phoenix Suns schedule url for the Jazz url. As a general rule, copying and pasting code is a bad idea. If I have to fix something in the code, then I have to fix it in multiple places. Instead I can turn everything I did into a function.
 
-```{r}
+
+```r
 predictRemaining = function(team){
   
 url = glue::glue("https://www.espn.com/nba/team/schedule/_/name/{team}") %>% 
@@ -180,29 +242,64 @@ sims = replicate(10000,predictWins(remaining$WinPer))
 
 With this function I can simplify the code and compare the results.
 
-```{r}
+
+```r
 utah = predictRemaining("utah")
 sum(startsWith(utah$schedule$RESULT,"W"))
+```
+
+```
+## [1] 50
+```
+
+```r
 prop.table(table(utah$sims))
+```
+
+```
+## 
+##      0      1      2      3      4 
+## 0.0087 0.0856 0.3047 0.4127 0.1883
+```
+
+```r
 phoenix = predictRemaining("phoenix")
 sum(startsWith(phoenix$schedule$RESULT,"W"))
+```
+
+```
+## [1] 48
+```
+
+```r
 prop.table(table(phoenix$sims))
 ```
-If Utah wins zero more games then the Suns have a `r round(length(which(phoenix$sims >= 2)) / length(phoenix$sims),2)` chance of getting the one seed.
 
-If Utah wins one more game then the Suns have a `r round(length(which(phoenix$sims >= 3)) / length(phoenix$sims),2)` chance of getting the one seed.
+```
+## 
+##      0      1      2      3      4 
+## 0.0094 0.0984 0.3198 0.4024 0.1700
+```
+If Utah wins zero more games then the Suns have a 0.89 chance of getting the one seed.
 
-If Utah wins two more games then the Suns have a `r length(which(phoenix$sims >= 4)) / round(length(phoenix$sims),2)` chance of getting the one seed.
+If Utah wins one more game then the Suns have a 0.57 chance of getting the one seed.
 
-The odds of Utah winning two or more games is `r round(length(which(utah$sims >= 2)) / length(utah$sims),2)` chance of getting the one seed.
+If Utah wins two more games then the Suns have a 0.17 chance of getting the one seed.
+
+The odds of Utah winning two or more games is 0.91 chance of getting the one seed.
 
 I can calculate the total odds of the Jazz getting the number one seed like by adding two to the Jazz total as that is the current lead. The Suns have the tiebreaker though.
 
-```{r}
+
+```r
 adj = utah$sims + 2
 round(1 - sum(phoenix$sims >= adj) / length(phoenix$sims),2)
 ```
 
-The result is that the Utah Jazz have a `r round(1 - sum(phoenix$sims >= adj) / length(phoenix$sims),2)` chance of getting the number one seed. This is pretty close to what I found [elsewhere](https://www.deseret.com/2021/5/10/22429307/what-do-the-utah-jazz-have-left-to-do-to-get-the-no-1-seed-in-the-western-conference-nba-playoffs) and good news personally.
+```
+## [1] 0.89
+```
+
+The result is that the Utah Jazz have a 0.89 chance of getting the number one seed. This is pretty close to what I found [elsewhere](https://www.deseret.com/2021/5/10/22429307/what-do-the-utah-jazz-have-left-to-do-to-get-the-no-1-seed-in-the-western-conference-nba-playoffs) and good news personally.
 
 The great thing is I can rerun this code whenever I want and it should work. Of course, that doesn't always work as intended but at least I learn some new skills every time I encounter a problem. I've used R for a few years now, but I still visited eleven different stack overflow questions just to write this.
