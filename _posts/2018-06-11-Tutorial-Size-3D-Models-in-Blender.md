@@ -1,18 +1,22 @@
-﻿---
+---
 layout: post
 title: Tutorial&#58; Size 3D Models in Blender
 redirect_from:
   - /Size-3D-Models-in-Blender/
+excerpt_separator: <!--more-->  
 ---
 
 This tutorial demonstrates how to accurately size a 3D model using the open source software [Blender](https://www.blender.org/).
-<a href="https://bischrob.github.io/Size-3D-Models-in-Blender/"><img src="https://lh3.googleusercontent.com/51WAp6PDGCYAkapxsXIpKq4pkZfO2NFXiJgdoXnQ5BNxtbxCD0a1Q44YqQAKU_shCXzKFCO9Iu7RJfJ6dil8YRklMFV1jjTBwLXA6iHVmS2uNtO-Ktyl_AoL-TDqRErs8enzyrGYSq1dYeobACzL7ohxQO63-xBO9EfyqBAkzMxTJwoZUpApiyNh-fHHMr5M0y1GDMpeZmr9uLX7gg0DLdXXb6V_aQS9Mlc3JWqDNGHtzIltKeqfnbvueKDUApdDG7MfgSlKGGaVZEtK1W-ORXx3iB6Td7zzxq54nFoTTZvYh3man3jW13zEO_cku6STu1QxS1z2VlJKkKjcTWRs_jbuB-ziMvX_7B7XSPtfMabyteNcmVJlUp8XEJd3XneU_61H1KmJtrDqESjL9kyjc9AwXgVEBSArSTrNNRlsxglLpK_hAvom5JjNzSzToUe40UejUm7P9VXJUSpBJi1kZb7Xf1GOUdd3M9eNXYB-5d27Lv-eAIfXFo27UnVfB1EnClQgI1WvqfALXucV4WQ-zzUWHoDGwHZkCtSEIKi2rq0tIm382tPlM-EpuNvOywsRkbXYDpRejBJvxJ5ok_XiDy4s0XwEtVeA0mlc0_erFN5Ih2wSv9BW3vn5KzFuCxBF_h_6bM1zph36-IsNsiYIWQlu4cDZXyV3ew=w1680-h267-no"  
-alt = "Measuring"></a>
+
+<a href="/Size-3D-Models-in-Blender">
+<img src="../images/Resize3DModels/Measuring.png" class="mainImg" width="100%"/>
+</a>
+
+<!--more-->
 
 You will need a 3D model in a common file format (I use OBJs) and the measurement of the longest axis of the object. Once you become familiar with this process it will only take a couple minutes to complete.
 
-3D models are great for measurements that are difficult to obtain from physical objects, but first the 3D model itself must be the right
-size. Many laser scanners or structured-light scanners automatically scale the object, but often models created using photogrammetry lack a true scale. Whatever the reason you need a 3D object scaled to the right size, this tutorial will show you a simple method using Blender.  
+3D models are great for measurements that are difficult to obtain from physical objects, but first the 3D model itself must be the right size. Many laser scanners or structured-light scanners automatically scale the object, but often models created using photogrammetry lack a true scale. Whatever the reason you need a 3D object scaled to the right size, this tutorial will show you a simple method using Blender.  
 
 I've chosen Blender as it is free and comes with no restrictions. The software can be used to create an animated movie from scratch or
 design a 3D game, but it can be  overwhelming at first. Blender has a large community and many free tutorials if you would like to become more familiar with the basics or expand your knowledge. This tutorial is designed for the Blender beginner, but I generally will only cover Blender basics related to this process.
@@ -20,44 +24,52 @@ design a 3D game, but it can be  overwhelming at first. Blender has a large comm
 
 ## Step 1 - Remove cube 
 
-<a href="https://lh3.googleusercontent.com/2xXI11_E6albikIb0u054MCn8N74P5IVYwHa6Vz0dzfKv_M7kJksPVdHBRWHqd8cgE7tFElysaBFc28Hsb18-jg_ANSW-kiNtexTZW-9zmFJGZ4Qc4hO4YW1waSRW2A6Cvse-I0VZ2MXRhOhcSjjSTpjAj5uGuhMBLmx9hr7ms_6L7p_t3OqnBtCNBldnGn57uJ09olKRKO-dDr2R_J0ZY2Dm1gpb5mHfPEkoCjTgXDpNvFgZNJj8qq6xWp5iDg-2o0k3zE43wjwEJa7nP_P6LmM5n7EbRPpTWN6xRUUXMbo8c0BZVXcPmTlNz-Oh6NwFGlwpUzYmrHpxEW7a5HGPh5m3v0E67RjkQN_X-WqacYgp4THU6WtttF7iN_BJxOr02GOovRycE_eIry_Sdk_fu65Dzr0QQzy3FF-YWCke7gTC_nHOnXEUASxbRiyBL-QKidUz3dGlmem54cjRjHB6tS3i3ZsrontVOqKbeZlZhzLcimNs6ROheqbx3d3EDCKKqsLxyHnIO7LhFeLWB5OxAn30psCOv1fTPVk4KdiMr7l4ZI9APN22EdCvUk6TKSllIZHjvVdeU_m-hdJeqguoCVgCL3X_sPPO337uHIeB2kMF7wYkqDL1pxsgieoV5WS81eiSYR2P03xCPYZyGddhA0GVChxL7C3Vg=w1558-h910-no"><img src="https://lh3.googleusercontent.com/2xXI11_E6albikIb0u054MCn8N74P5IVYwHa6Vz0dzfKv_M7kJksPVdHBRWHqd8cgE7tFElysaBFc28Hsb18-jg_ANSW-kiNtexTZW-9zmFJGZ4Qc4hO4YW1waSRW2A6Cvse-I0VZ2MXRhOhcSjjSTpjAj5uGuhMBLmx9hr7ms_6L7p_t3OqnBtCNBldnGn57uJ09olKRKO-dDr2R_J0ZY2Dm1gpb5mHfPEkoCjTgXDpNvFgZNJj8qq6xWp5iDg-2o0k3zE43wjwEJa7nP_P6LmM5n7EbRPpTWN6xRUUXMbo8c0BZVXcPmTlNz-Oh6NwFGlwpUzYmrHpxEW7a5HGPh5m3v0E67RjkQN_X-WqacYgp4THU6WtttF7iN_BJxOr02GOovRycE_eIry_Sdk_fu65Dzr0QQzy3FF-YWCke7gTC_nHOnXEUASxbRiyBL-QKidUz3dGlmem54cjRjHB6tS3i3ZsrontVOqKbeZlZhzLcimNs6ROheqbx3d3EDCKKqsLxyHnIO7LhFeLWB5OxAn30psCOv1fTPVk4KdiMr7l4ZI9APN22EdCvUk6TKSllIZHjvVdeU_m-hdJeqguoCVgCL3X_sPPO337uHIeB2kMF7wYkqDL1pxsgieoV5WS81eiSYR2P03xCPYZyGddhA0GVChxL7C3Vg=w1558-h910-no"  
-alt = "Delete cube"></a>
+<a href="../images/Resize3DModels/DeleteCube.png">
+<img src="../images/Resize3DModels/DeleteCube.png" class="mainImg" width="100%"/>
+</a>
 
 If you have the default setup for Blender, then the first step is to remove the default cube. This is done by first selecting the object.
 Right click on the cube and it will be outlined in orange. Then, with the mouse inside the *3D View* window (keyboard shortcuts only work if the mouse is hovering in the right area), press *X* or the delete key. A menu will appear, click delete.
 
 ## Step 2 - Import 3D model
 
-<a href="https://lh3.googleusercontent.com/2K7CrRnYvJA17haF8NedQHdELoJRC0YASlmXW5ptrZ0o5tcDvP1SfRWwk6FTaSqHPCayrH0vOc12Pmv7UoyNfLBUSa9wEmt8gFKpuai9T_5rnE6BSf1DKgxpff7-GyThyTA84rh_B8X588lnn_33S5Lcp7K7l-uL1eqvP8PyxCqUU1fk4sQTi7WsV5JmZPD23zfKaOlwC7G3hnhL6ro6CzbTCUj69YjDV3-BQK4Wa_KSrpw-b2drrtNTdbqOgYQEW72DIgJQHw-EQt2HNC-iPnIpHnEYtp5tUboxWNN3ie-QM_mdMyV5AQqhAB1xBv-tShnaHLRZKIdwbtaH-uw8IEzlh2Tj-m0z7uCK1-G4WHLu8owOa2ZzD1-t3URNoYUjvcZ7oygMv51MMkhS32EgKRVWdMvw5_z9ciSNWgd0u7u-YuAzpdNfUYWyKA0PJH76fgH0dwyRyEvXevLlQAHRZ50Jfrocax0vc5PBFuQE2nsHgYILqrSqvsTIveVSs8WB3854m79JZxXknMMxpSUWuLjIP5hYagw0OItrIsz8RhjthA_gy7Q3fZrcoUaTFHEKBRWCl2MPFNLoTDXzIflukDWLjfmASsTZVLzdlNjh6jr0R3bc2b0bUepqBG4Z6EUp-mK-3VfgvpnHs-IhHIHoqCOi43JDoZKzOw=w1003-h603-no"><img src="https://lh3.googleusercontent.com/2K7CrRnYvJA17haF8NedQHdELoJRC0YASlmXW5ptrZ0o5tcDvP1SfRWwk6FTaSqHPCayrH0vOc12Pmv7UoyNfLBUSa9wEmt8gFKpuai9T_5rnE6BSf1DKgxpff7-GyThyTA84rh_B8X588lnn_33S5Lcp7K7l-uL1eqvP8PyxCqUU1fk4sQTi7WsV5JmZPD23zfKaOlwC7G3hnhL6ro6CzbTCUj69YjDV3-BQK4Wa_KSrpw-b2drrtNTdbqOgYQEW72DIgJQHw-EQt2HNC-iPnIpHnEYtp5tUboxWNN3ie-QM_mdMyV5AQqhAB1xBv-tShnaHLRZKIdwbtaH-uw8IEzlh2Tj-m0z7uCK1-G4WHLu8owOa2ZzD1-t3URNoYUjvcZ7oygMv51MMkhS32EgKRVWdMvw5_z9ciSNWgd0u7u-YuAzpdNfUYWyKA0PJH76fgH0dwyRyEvXevLlQAHRZ50Jfrocax0vc5PBFuQE2nsHgYILqrSqvsTIveVSs8WB3854m79JZxXknMMxpSUWuLjIP5hYagw0OItrIsz8RhjthA_gy7Q3fZrcoUaTFHEKBRWCl2MPFNLoTDXzIflukDWLjfmASsTZVLzdlNjh6jr0R3bc2b0bUepqBG4Z6EUp-mK-3VfgvpnHs-IhHIHoqCOi43JDoZKzOw=w1003-h603-no"  
-alt = "Import 3D model"></a>
+<a href="../images/Resize3DModels/ImportCropped.png">
+<img src="../images/Resize3DModels/ImportCropped.png" class="mainImg" width="100%"/>
+</a>
 
 The next step is to import the 3D model (this tutorial uses OBJ, but is similar for other file types). Select the following from the menu: File&rarr;Import&rarr;Wavefront (.obj).
 
 Warning! it make take some time to load if the model is large (you may consider decimating the model in the program used to create it or by using Blender itself).
 
 ## Step 3 - Adjust orientation
-<a href="https://lh3.googleusercontent.com/7umnGrcKdKgXvcz6if8_AHe3m9ZZLMi5w3KqmFpNy08jAlVdQvqWTwJZm_Sm8VyPtwt4OhjNhyyhSH4tYRLnakZQNXWv-X_mwzPdwSdIOMqN_dwjHBWKareTimMis0rj-mYZZEC1nQtHDO9OTW-j72aC0VpeFUz_Kj2FCNKpue8X8kMVTP6YtzSomVvlhJumjvV5724nRceajH3vJzYgsh75WwjSZB8wbrxCph0rX149la8b0yZrfOMBX0vyqfVPa3v_f-mRLp4Vz_3UAnyODoLyTpsf1wTQIk5U1SFaLTBeAqbAY5Cxsc-IzFZNrY76a0vEkNLkFuMOciKRB95UE1R9mD7h346XqjdGcVtsnrpM0FHzOLl9RjKQ23-f6jOzgqL2H2SBeZXlGTlE0YnlLe8iIsKihdeHqM21RIukGO0jndi2jpOkjgXOn8OrE7Qp9l3GZzgmUibkFlC8rKbZ1z7pEcyHOXCU0q6YEm2rL5KSL-fe_KeZZ2iC5sRcs-7vPM4roOzLlRG3vSFO2MCOAnx0FFblLp7l34Dpyaf0IbTvHFFFXDkSoLOlk_PIV1111qLyxPGKa6fKWXX3_T_xEXxeoNeY1I3vp21Cr-xu4CD45x1qNR8BWlWf56upIsbgXuzKAcbn6VE7quHPAzCW8eJaTzAF-mJBTA=w1320-h794-no"><img src="https://lh3.googleusercontent.com/7umnGrcKdKgXvcz6if8_AHe3m9ZZLMi5w3KqmFpNy08jAlVdQvqWTwJZm_Sm8VyPtwt4OhjNhyyhSH4tYRLnakZQNXWv-X_mwzPdwSdIOMqN_dwjHBWKareTimMis0rj-mYZZEC1nQtHDO9OTW-j72aC0VpeFUz_Kj2FCNKpue8X8kMVTP6YtzSomVvlhJumjvV5724nRceajH3vJzYgsh75WwjSZB8wbrxCph0rX149la8b0yZrfOMBX0vyqfVPa3v_f-mRLp4Vz_3UAnyODoLyTpsf1wTQIk5U1SFaLTBeAqbAY5Cxsc-IzFZNrY76a0vEkNLkFuMOciKRB95UE1R9mD7h346XqjdGcVtsnrpM0FHzOLl9RjKQ23-f6jOzgqL2H2SBeZXlGTlE0YnlLe8iIsKihdeHqM21RIukGO0jndi2jpOkjgXOn8OrE7Qp9l3GZzgmUibkFlC8rKbZ1z7pEcyHOXCU0q6YEm2rL5KSL-fe_KeZZ2iC5sRcs-7vPM4roOzLlRG3vSFO2MCOAnx0FFblLp7l34Dpyaf0IbTvHFFFXDkSoLOlk_PIV1111qLyxPGKa6fKWXX3_T_xEXxeoNeY1I3vp21Cr-xu4CD45x1qNR8BWlWf56upIsbgXuzKAcbn6VE7quHPAzCW8eJaTzAF-mJBTA=w1320-h794-no"  
-alt = "Adjust orientation"></a>
+
+<a href="../images/Resize3DModels/Importedobject.png">
+<img src="../images/Resize3DModels/Importedobject.png" class="mainImg" width="100%"/>
+</a>
 
 Once the object is loaded it should appear in the view screen. Occasionally the object will not be visible, either due to its small size or that the 3D model is located far from the [origin](https://docs.blender.org/manual/en/dev/editors/3dview/object/origin.html). The easiest way to find the model is to press **.** on the numpad (note that only the numpad can be used for navigation unless changed in the Blender settings). Another method is to use the toolbar on the bottom of the *3D View* window (the lowest screen is defaulted to the timeline window and selections from this toolbar will not affect the 3D view; see a general Blender tutorial for more details). Select *View&rarr;Align View&rarr;View* selected to view the object. This only works on the selected object. Another way to select an object is to use the *Outliner* window located in the top right of the default window. Any object in this window can be selected by left-clicking it.
 
-<a href="https://lh3.googleusercontent.com/X_xuY8AzmgOzLs5x1V9Uovn7SIzsD6YE1aguw0lNRqw2jkyh4KYKiRtz_JbYzk3foabXKIrZlPnYtl92NeJRzTq9cSqhWBKyaT7kEQFhHdp2ptkZQqWWxKtik9ltKI7S0griOH5WBRNlf6gGS7hzQeusMRATrQVxNYvVrn9IjhnonCMk3W3vcLOIYunLLZKzRLHXbTVZASbEHiP96d9FHrkNhmOa70z2ZByFinxg64PBZmjXmoaGiT2ZYIaITmrCFzf5ELXmoU4qss7_67o8jG6c0ZDNowzHSXPd93VrOPO8QWw_LAvgXtNi2omqe2yeHX0DnET0XuX3SwR23cNWGETzaFWxsBDN6cF8_ft3wYU5yxm-BCBpZS6wm9smoSgICcrNkX7w_9g6xLI7S3I_KLJqv2VmqUzUK2efLAY6Zn7Z46yGlHM4iYmASA9ZIQ6WiZHSMe9veDe7QNDwaqKd6Kf6E12ZsyhRZ7SeXXjVRaKJfLssWW-Nu-Oje4lSd4ihn8avvEpVk2zZcLYMxz86Oyi5VcqV_CnKbgg06rFc4l7USkwdpFTbVZ2d__6qjAAo4_GvSmpmOY-QtmZPH6eV0jAxY9zt_-od7b8voDC1L9T_so0uApqooMn0VZS73XaR7MF1Y3SkDaLHZvCdntop7dAmhnJ3oiyfeg=w778-h468-no"><img src="https://lh3.googleusercontent.com/X_xuY8AzmgOzLs5x1V9Uovn7SIzsD6YE1aguw0lNRqw2jkyh4KYKiRtz_JbYzk3foabXKIrZlPnYtl92NeJRzTq9cSqhWBKyaT7kEQFhHdp2ptkZQqWWxKtik9ltKI7S0griOH5WBRNlf6gGS7hzQeusMRATrQVxNYvVrn9IjhnonCMk3W3vcLOIYunLLZKzRLHXbTVZASbEHiP96d9FHrkNhmOa70z2ZByFinxg64PBZmjXmoaGiT2ZYIaITmrCFzf5ELXmoU4qss7_67o8jG6c0ZDNowzHSXPd93VrOPO8QWw_LAvgXtNi2omqe2yeHX0DnET0XuX3SwR23cNWGETzaFWxsBDN6cF8_ft3wYU5yxm-BCBpZS6wm9smoSgICcrNkX7w_9g6xLI7S3I_KLJqv2VmqUzUK2efLAY6Zn7Z46yGlHM4iYmASA9ZIQ6WiZHSMe9veDe7QNDwaqKd6Kf6E12ZsyhRZ7SeXXjVRaKJfLssWW-Nu-Oje4lSd4ihn8avvEpVk2zZcLYMxz86Oyi5VcqV_CnKbgg06rFc4l7USkwdpFTbVZ2d__6qjAAo4_GvSmpmOY-QtmZPH6eV0jAxY9zt_-od7b8voDC1L9T_so0uApqooMn0VZS73XaR7MF1Y3SkDaLHZvCdntop7dAmhnJ3oiyfeg=w778-h468-no"  
-alt = "Set origin"></a>
+<a href="../images/Resize3DModels/Origin2Geometry.png">
+<img src="../images/Resize3DModels/Origin2Geometry.png" class="mainImg" width="100%"/>
+</a>
 
 If the imported object looks correct, then next we adjust the origin to make the object easier to manage (assuming the 3D model isn't tied to a meaningful origin point [it usually isn't]). The orientation of the selected object can be changed using the *Tool Shelf*. This panel can be viewed/hidden by pressing *T* on the keyboard. The first tab on the *Tool Shelf* is labeled *Tools*. Select *set origin* and a menu will appear. Select the first option (*Geometry to Origin*). This will move the object to the center (use **.** on the numpad to reorient the *3D Viewer*).
 
 Next we will rotate the object. This step is critical as the orientation of the object will be used for sizing the object. *R* on the keyboard is used to rotate the object. I find it easiest to rotate one axis at a time. Limit the rotation by pressing *R* and then *X*, *Y*, or *Z*. There is no need to hold down keys when executing sequences on the keyboard. Simply press *R* once, then press *X* once. Changing the view will help with orienting the object. First change the view to ortho by pressing *5* on the numpad (while I will be using keyboard shortcuts the corresponding navigation options are under the *View* menu at the bottom of the *3D View* screen). Next, move to *Front* view by pressing *1* on the numpad. Rotate the object using the keyboard shortcuts above until the objects looks as it should when viewed from the front. Move the mouse in a circle to rotate it and use the shift key to make fine adjustments. Repeat this step for the side view (3 on the numpad) and top view (7 on the numpad). You can view the opposite side by holding down *Ctrl*. For example, press *Ctrl-T* to see the bottom view. You may need to move between the views several times to properly orient the object. Remember to limit the rotation to one axis to avoid changing previously oriented axes. We will scale the object along its longest axis. To do this the longest axis must be aligned directly to the *X*, *Y*, or *Z* axis. I use the *Y* axis in this tutorial.
 
-<a href="https://lh3.googleusercontent.com/FqpM62TKmmCXBCX1Zlt-FSiW3-jXhoPC5bb6sPhjC7JPTMf181GUGN5Sfrk9HOT0B826GotHetsUiqZSyP-ATwbPUepeg44llJmkLszl7VjZbR1nM5ay5_eO-0ys5W4vT5eV_SZashOZf2QXdqxRh4KvGouTKN2eF_xKJQHpk1UY5e4rOGmd6prnUvzrNYocjCiBGLGVRw7EOsajaj3evpModsEO20NQ7QBiZYJjGInTYGoBYRQ-nUE45deVYMZcmYPV2kwTmkT9oyso7dH6L2LY1iVXi-iC068QDlNTB6Vy9vOCjp1JDMQxT6z3BU3r5a9VvXYMDs09_2w9hy9yvS_FM4b_hy-ekN3dCh-NxPWuGyB6fR62lFvgeM_bMs1BkelLghT-l1_sI3HfwWYCg1je2AcO_FmUFAQX0k4CebMMhZtrUlgkrMicQJNgSV_tFMzEsf46gRCN-oI0rro337VnCYlrudkciPiJfwATx7QMpRSQgWN9uLm6qfVt53izoump_bAbA62jNW33DuEoydTn0OLq4-ODE1olwFjNpamwmG4hDtigANxdBaAusGFMzGeqybWQlP2KeheMh0EL6GKzC--dEKMjJxmSffmoLqUyWpybf7fBhiUa7CIE4ju7-uzOB-ch-SAP4a_XElkNv0mstOHgEhzdQA=w1320-h794-no"><img src="https://lh3.googleusercontent.com/FqpM62TKmmCXBCX1Zlt-FSiW3-jXhoPC5bb6sPhjC7JPTMf181GUGN5Sfrk9HOT0B826GotHetsUiqZSyP-ATwbPUepeg44llJmkLszl7VjZbR1nM5ay5_eO-0ys5W4vT5eV_SZashOZf2QXdqxRh4KvGouTKN2eF_xKJQHpk1UY5e4rOGmd6prnUvzrNYocjCiBGLGVRw7EOsajaj3evpModsEO20NQ7QBiZYJjGInTYGoBYRQ-nUE45deVYMZcmYPV2kwTmkT9oyso7dH6L2LY1iVXi-iC068QDlNTB6Vy9vOCjp1JDMQxT6z3BU3r5a9VvXYMDs09_2w9hy9yvS_FM4b_hy-ekN3dCh-NxPWuGyB6fR62lFvgeM_bMs1BkelLghT-l1_sI3HfwWYCg1je2AcO_FmUFAQX0k4CebMMhZtrUlgkrMicQJNgSV_tFMzEsf46gRCN-oI0rro337VnCYlrudkciPiJfwATx7QMpRSQgWN9uLm6qfVt53izoump_bAbA62jNW33DuEoydTn0OLq4-ODE1olwFjNpamwmG4hDtigANxdBaAusGFMzGeqybWQlP2KeheMh0EL6GKzC--dEKMjJxmSffmoLqUyWpybf7fBhiUa7CIE4ju7-uzOB-ch-SAP4a_XElkNv0mstOHgEhzdQA=w1320-h794-no"  
-alt = "Top ortho view"></a>
+<a href="../images/Resize3DModels/LongestAxis.png.png">
+<img src="../images/Resize3DModels/LongestAxis.png.png" class="mainImg" width="100%"/>
+</a>
 
 In the above screenshot the edge of the object farthest above and below the *X* axis are directly aligned. The green line is the Y axis running through these points. The screenshot shows the top view (7 on the numpad). The *Y* axis is aligned with the location of the measurement taken from the physical object. The axis lines are a good way to align the model. Drag the arrows in the direction you want to move the object so the longest axis is aligned with the chosen axis (you can also move the object free-form by pressing *G* and then left-clicking to place the object).
 
 The last step in orienting the object is to apply the changes. Failing to apply the changes will mess up the next step. Press *Ctrl-A* and a menu will appear. Select *Rotation & Scale*. I also like to apply the *Location* as well, although this is not necessary.
 
 ## Step 4 - Scaling
-<a href="https://lh3.googleusercontent.com/-_A3PZl6g1cRypJloOmt-u8wbHOE6AFSJavglhQs_Z7IHLHV2kWI6ylIs26EnbJcFylj3waUp2muQPYOqmNRmgYwptdtvcr3fJo2OVB-nmip0P0avjl92yl494sd2vYMArkBb1VctPuL_8Yp0z51IK3jAENRD992WRdL7MDS2WCgkei49k4-OEMa1xvW7FKXn9rzMP9aCz3mhgCDteid4kkr_tRcPOBv7bW5u6-2yxt5pGycr6LtOx7M74HNqQe0n3ZmiDsliz4Nyr_Ldqpxd0DZVO44Ir7Z7NYA2DgkckS5lvWi6X5KR6ajNTiBLFu3_0GPaDy-ONpwxP1KmS6IAXr9wZIW1dXgAkE9A5u73lY8MOCTUjc2vkPs93SKZEG5U6zadvlLoLTWWRvxwNL9uYymm0OB7y6AC-y9kDRBxfu_9WGRtBLgHhMy-H_cuz_AFTj-Q2tUIycdHYeK6voEjmh1UZbHytf-5kjGaZHqjap8hr04mTwcDihltSV4rXHxh8RtYI0w6yYMqmBwDPfgzw-fnCms__ccoN73V6SoAEVyE38aXEetanjuY6_3Dlldx13br0QuxXHWMC-0MG5TKr_u3h7P3eSAbwf26-1z1sO_swy3Cr2LZeT0ovTBG6ENE45GqV0vlOM9G74nBKMywoktberVadQKsg=w753-h453-no"><img src="https://lh3.googleusercontent.com/-_A3PZl6g1cRypJloOmt-u8wbHOE6AFSJavglhQs_Z7IHLHV2kWI6ylIs26EnbJcFylj3waUp2muQPYOqmNRmgYwptdtvcr3fJo2OVB-nmip0P0avjl92yl494sd2vYMArkBb1VctPuL_8Yp0z51IK3jAENRD992WRdL7MDS2WCgkei49k4-OEMa1xvW7FKXn9rzMP9aCz3mhgCDteid4kkr_tRcPOBv7bW5u6-2yxt5pGycr6LtOx7M74HNqQe0n3ZmiDsliz4Nyr_Ldqpxd0DZVO44Ir7Z7NYA2DgkckS5lvWi6X5KR6ajNTiBLFu3_0GPaDy-ONpwxP1KmS6IAXr9wZIW1dXgAkE9A5u73lY8MOCTUjc2vkPs93SKZEG5U6zadvlLoLTWWRvxwNL9uYymm0OB7y6AC-y9kDRBxfu_9WGRtBLgHhMy-H_cuz_AFTj-Q2tUIycdHYeK6voEjmh1UZbHytf-5kjGaZHqjap8hr04mTwcDihltSV4rXHxh8RtYI0w6yYMqmBwDPfgzw-fnCms__ccoN73V6SoAEVyE38aXEetanjuY6_3Dlldx13br0QuxXHWMC-0MG5TKr_u3h7P3eSAbwf26-1z1sO_swy3Cr2LZeT0ovTBG6ENE45GqV0vlOM9G74nBKMywoktberVadQKsg=w753-h453-no"  
-alt = "Change scene unit"></a>
+
+<a href="../images/Resize3DModels/ChangeSceneUnitscropped.png.png">
+<img src="../images/Resize3DModels/ChangeSceneUnitscropped.png.png" class="mainImg" width="100%"/>
+</a>
 
 Blender does not use real world measurements by default. To change this, first select *Scene* on the properties window located by default on the far right (the icon has a sun, globe, and cylinder). In the *Units* section select *Unit Presets* (as shown in the screenshot above) and select *Millimeters*. Any unit can be used if desired, but millimeter is the default unit for *STLs*, which is the most commonly used file type for 3D printing. After changing the scene unit the dimensions will now have *mm*. 
 
@@ -65,8 +77,9 @@ In the screenshot above the dimensions are shown in the *properties panel*. This
 
 To scale the object simply enter the measurement value **in millimeters** on the appropriate axis. In my example I have aligned the model so that my physical measurement is directly along the *Y* axis. The method I demonstrate only works if this is the maximum *Y* length. In my example, the *Y* axis is currently showing as 5.551 mm. If part of the model extends further along the Y axis then what I measured the scaling will be off.
 
-<a href="https://lh3.googleusercontent.com/_ZmIvWbXE8YF9DFAc_a_1GrSMQcerZ-qYlU0KYlMtGmBPORgTvWfSM9wQ0GFyIkEn3WHjhkBzYtozIzzDCFnVeu_YLhw4UKLCINKjdlgF5_cyeUB_201uPSfY_51xbtrQ29eyMvi-bkGtWl-OQn685p6QyV5ch97rseNlITgWyc46-98bnXtqE1nIn33xhltK46L190f1ldXQX5uFXZDWlJAlv7NaV56WEwfPFwVf7makkAM1XEWemzPl6oeSpskRnKjrx3utuvimlifd-mCTohZU0TrBtdz-McGFyTE5_UGr3GwywPZBa1QkZmmeTKRTJYKFqF6tf5c0aRG5gx-SUv9s6wlQUQ4qTBbSwHnANFUZaD_r12iUdTR10Dam1-cbppt8mZcLZG4m4dsyj6BH0Vgjo4nAi6nIIb9sh5BRKFLA3RFHMl9IfWXHT4VC3BNHUFL4vdiLsW2Nq3P0gNZr3-_QvGbuoO0Ns78X1VmpCRw1feXLkEO4i08_VruefjkuYv1rHubn5r_b1_m6Eus4TAnCopV-h3AGQApypeZpVcq42CC59nj5i5fKouBjgf8z8s7HPEQ5WaAEdrBgz8La99FsIMUpqT5LtOg3ax2obxDpslBCeprUBFpBZ2j2Bmyv2KRQizb0yimlMVqQD4zC3qt0fq0eKrFDA=w1320-h794-no"><img src="https://lh3.googleusercontent.com/_ZmIvWbXE8YF9DFAc_a_1GrSMQcerZ-qYlU0KYlMtGmBPORgTvWfSM9wQ0GFyIkEn3WHjhkBzYtozIzzDCFnVeu_YLhw4UKLCINKjdlgF5_cyeUB_201uPSfY_51xbtrQ29eyMvi-bkGtWl-OQn685p6QyV5ch97rseNlITgWyc46-98bnXtqE1nIn33xhltK46L190f1ldXQX5uFXZDWlJAlv7NaV56WEwfPFwVf7makkAM1XEWemzPl6oeSpskRnKjrx3utuvimlifd-mCTohZU0TrBtdz-McGFyTE5_UGr3GwywPZBa1QkZmmeTKRTJYKFqF6tf5c0aRG5gx-SUv9s6wlQUQ4qTBbSwHnANFUZaD_r12iUdTR10Dam1-cbppt8mZcLZG4m4dsyj6BH0Vgjo4nAi6nIIb9sh5BRKFLA3RFHMl9IfWXHT4VC3BNHUFL4vdiLsW2Nq3P0gNZr3-_QvGbuoO0Ns78X1VmpCRw1feXLkEO4i08_VruefjkuYv1rHubn5r_b1_m6Eus4TAnCopV-h3AGQApypeZpVcq42CC59nj5i5fKouBjgf8z8s7HPEQ5WaAEdrBgz8La99FsIMUpqT5LtOg3ax2obxDpslBCeprUBFpBZ2j2Bmyv2KRQizb0yimlMVqQD4zC3qt0fq0eKrFDA=w1320-h794-no"  
-alt = "Scaled"></a>
+<a href="../images/Resize3DModels/Scaling.png">
+<img src="../images/Resize3DModels/Scaling.png" class="mainImg" width="100%"/>
+</a>
 
 In the above screenshot, I entered 24mm into the *Dimensions* box, which is the physical measurement I made. Note that this distorts the model. The *Scale* now reads 4.323 in the *Y* axis box. Copy and paste the *Y* scale to the *X* and *Z* boxes  using the keyboard shortcuts *Ctrl-C* and *Ctrl-V*. You will see that the model is no longer distorted.
 
