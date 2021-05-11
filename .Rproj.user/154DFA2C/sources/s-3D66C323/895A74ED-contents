@@ -1,0 +1,13 @@
+---
+layout: post
+title: Why I like R 
+excerpt_separator: <!--more-->
+output:
+  html_document:
+    keep_md: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
