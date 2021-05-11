@@ -2,6 +2,7 @@
 layout: post
 title: Pilling Figurines 3D Models
 excerpt_separator: <!--more-->
+categories: 3D Models
 ---
 
 I was recently able to photograph the Pilling Figurines and process the images into 3D models using Agisoft Photoscan.

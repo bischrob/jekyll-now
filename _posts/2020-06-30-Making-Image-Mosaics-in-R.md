@@ -2,6 +2,7 @@
 layout: post
 title: Making Image Mosaics in R
 excerpt_separator: <!--more-->
+categories: R
 ---
 
 I had the idea to make my dad an image mosaic of his grandkids for Father's day. My immediate thought was to check if R had a package for that--and it does. The `RsimMosaic` package is a great tool for making image mosaics. Combined with the `magick` package, I have all the tools I need. While I think the picture of my dad turned out great, I decided to make an archaeology related mosaic for this post.

@@ -8,4 +8,5 @@ node_modules
 package.json
 .Rproj.user
 *.psd
+.Rproj.user/*
 

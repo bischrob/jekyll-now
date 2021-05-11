@@ -2,6 +2,7 @@
 title: "Academic Reading on the Go — Adobe's liquid mode is a game changer"
 layout: post
 excerpt_separator: <!--more-->
+categories: productivity
 ---
 
 <a href="/Academic-Reading-on-the-Go/"> <img src="../images/AcademicReading/pdf-collagev2.jpg" class="mainImg" width="100%"/> </a>

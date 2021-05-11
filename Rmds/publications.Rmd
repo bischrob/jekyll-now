@@ -1,0 +1,19 @@
+---
+layout: page
+permalink: /publications/
+title: Publications
+output:
+  html_document:
+    keep_md: yes
+---
+
+```{r setup,echo = F, warning = F,message = F,results= "asis"}
+
+library(dplyr)
+library(tidyr)
+library(magrittr)
+library(RefManageR)
+bib1 <- RefManageR::ReadBib('publications.bib')
+print(bib1,.opts = list(style = "markdown",bib.style = "authoryear",first.inits = F))
+```
+
