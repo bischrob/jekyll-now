@@ -15,7 +15,14 @@ library(RefManageR)
 library(here)
 shell(paste(here::here("Rmds","highlightName.ps1"),
             here::here("Rmds","publications.bib")),shell = "powershell")
-BibOptions(bib.style = "authoryear",first.inits = F,style = "markdown",sorting = "none")
+BibOptions(
+  bib.style = "authoryear",
+  first.inits = F,
+  style = "latex",
+  sorting = "none",
+  dashed = F,
+  max.names = 20
+)
 bib1 <- RefManageR::ReadBib(here::here('Rmds/publications.bib'))
 # note
 # run this code in powershell after generating markdown

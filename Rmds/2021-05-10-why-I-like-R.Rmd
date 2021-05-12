@@ -182,10 +182,10 @@ With this function I can simplify the code and compare the results.
 
 ```{r}
 utah = predictRemaining("utah")
-sum(startsWith(utah$schedule$RESULT,"W"))
+utah$wins = sum(startsWith(utah$schedule$RESULT,"W"))
 prop.table(table(utah$sims))
 phoenix = predictRemaining("phoenix")
-sum(startsWith(phoenix$schedule$RESULT,"W"))
+phoenix$wins = sum(startsWith(phoenix$schedule$RESULT,"W"))
 prop.table(table(phoenix$sims))
 ```
 If Utah wins zero more games then the Suns have a `r round(length(which(phoenix$sims >= 2)) / length(phoenix$sims),2)` chance of getting the one seed.
@@ -199,8 +199,7 @@ The odds of Utah winning two or more games is `r round(length(which(utah$sims >=
 I can calculate the total odds of the Jazz getting the number one seed like by adding two to the Jazz total as that is the current lead. The Suns have the tiebreaker though.
 
 ```{r}
-adj = utah$sims + 2
-round(1 - sum(phoenix$sims >= adj) / length(phoenix$sims),2)
+round(1 - sum(phoenix$sims + phoenix$wins >= utah$sims + utah$wins) / length(phoenix$sims),2)
 ```
 
 The result is that the Utah Jazz have a `r round(1 - sum(phoenix$sims >= adj) / length(phoenix$sims),2)` chance of getting the number one seed. This is pretty close to what I found [elsewhere](https://www.deseret.com/2021/5/10/22429307/what-do-the-utah-jazz-have-left-to-do-to-get-the-no-1-seed-in-the-western-conference-nba-playoffs) and good news personally.
