@@ -9,4 +9,5 @@ package.json
 .Rproj.user
 *.psd
 .Rproj.user/*
-
+.RData
+.Rhistory

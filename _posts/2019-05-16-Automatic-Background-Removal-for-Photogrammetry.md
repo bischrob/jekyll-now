@@ -2,7 +2,7 @@
 title: "Automatic Background Removal"
 layout: post
 excerpt_separator: <!--more-->
-categories: 3D Models
+categories: 3D-Models
 ---
 
 There are a few different ways to automatically mask backgrounds when making a 3D model using photogrammetry, but I've struggled to find a method that worked for what I was doing.
