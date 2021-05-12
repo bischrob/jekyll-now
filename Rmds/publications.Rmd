@@ -18,7 +18,7 @@ shell(paste(here::here("Rmds","highlightName.ps1"),
 BibOptions(
   bib.style = "authoryear",
   first.inits = F,
-  style = "latex",
+  style = "markdown",
   sorting = "none",
   dashed = F,
   max.names = 20
