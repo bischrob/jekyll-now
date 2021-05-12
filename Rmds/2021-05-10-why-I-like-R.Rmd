@@ -50,9 +50,9 @@ schedule = url %>%
 
 gameIDs = map(1:nrow(schedule),~{
   xpath = paste0('//*[@id="fittPageContainer"]/div[2]/div[5]/div/div/section/div/section/section/div/div/div/div[2]/table/tbody/tr[',.x+1,']/td[3]/span/a')
-url %>% 
-  html_elements(xpath = xpath) %>% 
-  html_attr("href")
+  url %>% 
+    html_elements(xpath = xpath) %>% 
+    html_attr("href")
 })
 schedule %<>%
   mutate(gameID = gameIDs) %>% 
@@ -83,9 +83,9 @@ remaining %<>%
     if(gtools::invalid(.x)){
       result = '49%' # this was the odds pregame for Jazz vs Warriors
     } else {
-    xpath = 
-      '//*[@id="gamepackage-predictor"]/div/div/div[1]/div[1]/div/div/span[1]'
-    result = .x %>% read_html() %>% html_node(xpath = xpath) %>% html_text()
+      xpath = 
+        '//*[@id="gamepackage-predictor"]/div/div/div[1]/div[1]/div/div/span[1]'
+      result = .x %>% read_html() %>% html_node(xpath = xpath) %>% html_text()
     }
     return(result)
   })) %>% 
@@ -121,58 +121,59 @@ The Phoenix Suns are closing in on the Jazz. I could run the above code again bu
 ```{r}
 predictRemaining = function(team){
   
-url = glue::glue("https://www.espn.com/nba/team/schedule/_/name/{team}") %>% 
-  read_html()
-
-schedule = url %>%
-  html_node("table") %>%
-  html_table(header = T)
-
-gameIDs = map(1:nrow(schedule),~{
-  xpath = paste0('//*[@id="fittPageContainer"]/div[2]/div[5]/div/div/section/div/section/section/div/div/div/div[2]/table/tbody/tr[',.x+1,']/td[3]/span/a')
-url %>% 
-  html_elements(xpath = xpath) %>% 
-  html_attr("href")
-})
-schedule %<>%
-  mutate(gameID = gameIDs) %>% 
-  filter(DATE != 'DATE',RESULT != 'Postponed')
-
-schedule %<>% 
-  mutate_at(vars(DATE),list(~.x %>% 
-                              str_remove_all("^.*?,") %>%
-                              trimws %>% 
-                              parse_date_time("Om d"))) %>% 
-  mutate(DATE = case_when(month(DATE) == 12~`year<-`(DATE, 2020),
-                          TRUE~`year<-`(DATE, 2021)))
-
-remaining = schedule %>% 
-  filter(DATE >= today())
-
-remaining %<>% 
-  mutate(HomePred = map_chr(gameID,~{
-    if(gtools::invalid(.x)){
-      result = '49%' # this was the odds pregame for Jazz vs Warriors
-    } else {
-    xpath = 
-      '//*[@id="gamepackage-predictor"]/div/div/div[1]/div[1]/div/div/span[1]'
-    result = .x %>% read_html() %>% html_node(xpath = xpath) %>% html_text()
-    }
-    return(result)
-  })) %>% 
-  mutate_at(vars(HomePred),list(~.x %>%
-                                  sub("%","",.) %>%
-                                  as.double())) %>% 
-  mutate(WinPer = case_when(str_detect(OPPONENT,"@")~(100-HomePred)/100,
-                            TRUE~HomePred/100))
-
-predictWins = function(probs = remaining$WinPer){
-  map_int(probs,~{
-    sample(1:0,1,replace = T,prob = c(.x,1-.x)) %>% sum
-  }) %>% sum
-}
-
-sims = replicate(10000,predictWins(remaining$WinPer))
+  url = 
+    glue::glue("https://www.espn.com/nba/team/schedule/_/name/{team}") %>% 
+    read_html()
+  
+  schedule = url %>%
+    html_node("table") %>%
+    html_table(header = T)
+  
+  gameIDs = map(1:nrow(schedule),~{
+    xpath = paste0('//*[@id="fittPageContainer"]/div[2]/div[5]/div/div/section/div/section/section/div/div/div/div[2]/table/tbody/tr[',.x+1,']/td[3]/span/a')
+    url %>% 
+      html_elements(xpath = xpath) %>% 
+      html_attr("href")
+  })
+  schedule %<>%
+    mutate(gameID = gameIDs) %>% 
+    filter(DATE != 'DATE',RESULT != 'Postponed')
+  
+  schedule %<>% 
+    mutate_at(vars(DATE),list(~.x %>% 
+                                str_remove_all("^.*?,") %>%
+                                trimws %>% 
+                                parse_date_time("Om d"))) %>% 
+    mutate(DATE = case_when(month(DATE) == 12~`year<-`(DATE, 2020),
+                            TRUE~`year<-`(DATE, 2021)))
+  
+  remaining = schedule %>% 
+    filter(DATE >= today()) %>% 
+    mutate(HomePred = map_chr(gameID,~{
+      
+      xpath = 
+        '//*[@id="gamepackage-predictor"]/div/div/div[1]/div[1]/div/div/span[1]'
+      result = .x %>% 
+        read_html() %>%
+        html_node(xpath = xpath) %>%
+        html_text()
+      
+      return(result)
+    })) %>% 
+    filter(!str_detect(RESULT,"^W|^L")) %>% 
+    mutate_at(vars(HomePred),list(~.x %>%
+                                    sub("%","",.) %>%
+                                    as.double())) %>% 
+    mutate(WinPer = case_when(str_detect(OPPONENT,"@")~(100-HomePred)/100,
+                              TRUE~HomePred/100))
+  
+  predictWins = function(probs = remaining$WinPer){
+    map_int(probs,~{
+      sample(1:0,1,replace = T,prob = c(.x,1-.x)) %>% sum
+    }) %>% sum
+  }
+  
+  sims = replicate(10000,predictWins(remaining$WinPer))
   
   return(list(schedule = schedule, remaining = remaining, sims = sims))
 }
