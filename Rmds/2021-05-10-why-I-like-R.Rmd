@@ -40,7 +40,7 @@ The `%<>%` function is one of my favorites as it takes whatever is on the left, 
 
 I won't describe what ***xpaths*** are in detail, but they can be used to identify specific elements on a page. The table rows match up to the `xpath` so I can get all of the links to the individual games by just changing what is essentially the row number. This was easier to do before the game started, but afterwards the link disappeared, so I had to find a workaround that works more consistently. 
 
-```{r}
+```{.r}
 url = "https://www.espn.com/nba/team/schedule/_/name/utah" %>% 
   read_html()
 
@@ -62,7 +62,7 @@ schedule %<>%
 
 Next, I identified the remaining games. There are a few ways to do this, but I decided to get complicated and convert the date in the schedule table to a real date so I could filter for games today and later. It might be better to just filter for games that are not completed, but this way shows how R can be used for time series.
 
-```{r}
+```{.r}
 schedule %<>% 
   mutate_at(vars(DATE),list(~.x %>% 
                               str_remove_all("^.*?,") %>%
@@ -77,7 +77,7 @@ remaining = schedule %>%
 
 Next, I used a ***purrr map*** function to go through each game link and get the odds of winning for the home team. I then calculated the Jazz odds of winning by determining who was the home team and inverting the odds if necessary. Because I ran this during a game the game link was missing so I used the invalidate function from ***gtools*** to add in the odds for tonight. I haven't used this function much but it seems a good catchall for values that are problematic (e.g., null,NA, or empty values).
 
-```{r}
+```{.r}
 remaining %<>% 
   mutate(HomePred = map_chr(gameID,~{
     if(gtools::invalid(.x)){
@@ -98,7 +98,7 @@ remaining %<>%
 
 Last, I created a function to simulate the remaining wins using 1 as a win and zero as a loss and replicated that function 10,000 times. The simulation went fairly quickly on my computer, and I used the nice and simple ***tictoc*** package to show the time elapsed.
 
-```{r}
+```{.r}
 predictWins = function(probs = remaining$WinPer){
   map_int(probs,~{
     sample(1:0,1,replace = T,prob = c(.x,1-.x)) %>% sum
@@ -112,7 +112,7 @@ tictoc::toc()
 
 With these results I could look at the odds Utah wins its remaining games.
 
-```{r}
+```{.r}
 prop.table(table(sims))
 ```
 
