@@ -50,7 +50,7 @@ And before that, you need something to model...
 
 Factors to consider when selecting an object are object geometry, surface reflection/transparency, sharp/fine edges, and moving/flowing parts. You need to be able to capture all aspects of the object from multiple camera angles. This can be challenging with small orifices or complicated geometry. For example, the Clay Pipe model below was challenging because I could not capture very far into the interior of the pipe. The size of the object makes a big difference but only because of the difficulty photographing it. If you can take a picture of it then then you can make a 3D model, but you may need special equipment for very small objects. A macro lens is a good investment.
 
-<div class="sketchfab-embed-wrapper">
+<div class="sketchfab-embed-wrapper" style="text-align:center">
 <iframe title="FS9491 Fremont Clay Pipe" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="fullscreen; autoplay; vr" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="600" height="400" src="https://sketchfab.com/models/a4e08f0908c54126a2b7e6b127543b8d/embed">
 
 </iframe>
@@ -70,7 +70,7 @@ Clovis point coated in talcum powder
 
 <br>
 
-<div class="sketchfab-embed-wrapper">
+<div class="sketchfab-embed-wrapper" style="text-align:center">
 <iframe title="Clovis Point" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="fullscreen; autoplay; vr" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="600" height="400" src="https://sketchfab.com/models/7d120265e751404a8f83c7ae882c5458/embed?ui_theme=dark">
 
 </iframe>
@@ -80,7 +80,7 @@ Clovis point coated in talcum powder
 
 Another challenge is fine particles like hair or fur or sharp edges. The sharp edges of the obsidian Clovis point took several attempts to capture, but I found that taking lots of pictures helped. Anything that moves freely like hair or fur will be a challenge if it is not in the same relative position from photo to photo. This cradle figurine is a good example of how fur is difficult to capture. You can see that the edges are much fuzzier than other parts of the model. There are also holes where it was difficult to photograph the object due to the angles. I also didn't want to set the basket upside down to photograph the back so that part is missing. To make the model seem nicer I added a board using Blender to make it look like it was sitting on something.
 
-<div class="sketchfab-embed-wrapper">
+<div class="sketchfab-embed-wrapper" style="text-align:center">
 <iframe title="Cradle Figurine" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="fullscreen; autoplay; vr" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="600" height="400" src="https://sketchfab.com/models/8b0d2c3a550648a3bf1bc121c067db9f/embed">
 
 </iframe>
@@ -88,7 +88,7 @@ Another challenge is fine particles like hair or fur or sharp edges. The sharp e
 
 <br>
 
-To start with, I recommend choosing an object with rough texture and relatively simple geometry. It should have some distinguishing features though. I've found clay figures work very well. [Here](../data/Pillings3Example.zip) is a dataset that I will use in this tutorial. These are pictures of [Pillings Figurine No. 3](./Pilling-Figurines-3D-Models/) which is on display at the [USU Eastern Prehistoric Museum](https://eastern.usu.edu/museum/). While choosing a good artifact is helpful for learning, don't give up! I have been able to make 3D models work in some pretty bad situations--I even wrote a [post](https://bischrob.github.io/Pilling-Figurines-3D-Models/) about it.
+To start with, I recommend choosing an object with rough texture and relatively simple geometry. It should have some distinguishing features though. I've found clay figures work very well. [Here](../data/Pillings3Example.zip) is a dataset that I will use in this tutorial. These are pictures of [Pillings Figurine No. 3](https://bischrob.github.io/Pilling-Figurines-3D-Models/) which is on display at the [USU Eastern Prehistoric Museum](https://eastern.usu.edu/museum/). While choosing a good artifact is helpful for learning, don't give up! I have been able to make 3D models work in some pretty bad situations--I even wrote a [post](https://bischrob.github.io/Pilling-Figurines-3D-Models/) about it.
 
 ## Photography
 
@@ -204,7 +204,7 @@ The last step in the photogrammetry process is to add a texture. This does nothi
 
 This is what your model should look like if you used the example files (except this model was made on full-resolution photos):
 
-<div class="sketchfab-embed-wrapper">
+<div class="sketchfab-embed-wrapper" style="text-align:center">
 <iframe title="Pilling Figurine No. 3" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="fullscreen; autoplay; vr" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="600" height="400" src="https://sketchfab.com/models/0014dfbf96f8438997e407e841d8c027/embed?ui_theme=dark">
 </iframe>
 </div>
